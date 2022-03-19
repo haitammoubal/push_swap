@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/01 10:56:44 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
-
-
-#endif
+int	ft_toupper(int a)
+{
+	if (a >= 97 && a <= 122)
+		a = a - 32;
+	return (a);
+}

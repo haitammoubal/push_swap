@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/01 15:31:27 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:28:46 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+int	ft_atoi(const	char	*str)
+{
+	int	i;
+	int	sign;
+	int	r;
 
-
-#endif
+	i = 0;
+	sign = 1;
+	r = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == 43 || str[i] == 45)
+	{
+		if (str[i] == 45)
+			sign = -sign;
+		i++;
+	}
+	while (str[i] >= 48 && str[i] <= 57)
+	{
+		r = (r * 10) + (str[i] - 48);
+		i++;
+	}
+	return (sign * r);
+}

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/01 16:15:09 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+void	*ft_memset(void *p1,	int v,	size_t count)
+{
+	int				i;
+	unsigned char	*p;
 
-
-#endif
+	i = 0;
+	p = p1;
+	while (count != 0)
+	{
+		p[i] = v;
+		i++;
+		count--;
+	}
+	return (p1);
+}

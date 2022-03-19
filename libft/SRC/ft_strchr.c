@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/01 12:23:49 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+char	*ft_strchr(const char *str,	int a)
+{
+	int	i;
 
-
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == (unsigned char)a)
+			return ((char *)&str[i]);
+		i++;
+	}
+	if (a == '\0')
+		return ((char *)&str[i]);
+	return (NULL);
+}

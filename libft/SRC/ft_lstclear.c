@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/04 19:11:20 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+void	ft_lstclear(t_list **lst,	void (*del)(void *))
+{
+	t_list	*p;
+	t_list	*m;
 
-
-#endif
+	p = *lst;
+	if (!lst || !del)
+		return ;
+	while (p->next != NULL)
+	{
+		m = p->next;
+		del(p->content);
+		free(p);
+		p = m;
+	}
+	del(p->content);
+	free(p);
+	*lst = NULL;
+}

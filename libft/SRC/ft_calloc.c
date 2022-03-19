@@ -1,20 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/01 19:05:39 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+void	*ft_calloc(size_t	a, size_t	i)
+{
+	char	*hub;
+	int		k;
+	int		j;
 
-
-#endif
+	hub = NULL;
+	k = 0;
+	j = 0;
+	if (a == 0 || i == 0)
+	{
+		i = 1;
+		a = 1;
+	}
+	k = a * i;
+	hub = malloc(k);
+	if (hub == NULL)
+		return (NULL);
+	while (k != 0)
+	{
+		hub[j] = '\0';
+		j++;
+		k--;
+	}
+	return (hub);
+}

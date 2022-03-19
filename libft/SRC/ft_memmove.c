@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 22:37:18 by haitam           ###   ########.fr       */
+/*   Created: 2021/11/02 08:44:58 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/19 22:29:11 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "../includes/libft.h"
 
-#include "../libft/includes/libft.h"
-#include "../printf/includes/ft_printf.h"
+void	*ft_memmove(void *dest,	const void *src,	size_t size)
+{
+	char	*p1;
+	char	*p2;
+	char	*tab;
+	char	*hub;
 
-
-#endif
+	p1 = dest;
+	p2 = (char *)src;
+	tab = NULL;
+	hub = NULL;
+	if (!p1 && !p2)
+		return (NULL);
+	if (p1 < p2)
+	{
+		while (size--)
+			*p1++ = *p2++;
+	}
+	else
+	{
+		tab = p1 + (size - 1);
+		hub = p2 + (size - 1);
+		while (size--)
+			*tab-- = *hub--;
+	}
+	return (dest);
+}

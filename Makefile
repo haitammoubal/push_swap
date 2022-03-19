@@ -45,6 +45,8 @@ fclean : clean
 
 re : fclean all
 
+all : $(NAME)
+
 norme :
 	@norminette **/*.c
 	@norminette **/*.h
