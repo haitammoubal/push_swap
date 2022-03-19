@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra
 
 CFILES = push_swap.c\
 
-OFILES = $(addprefix $(OBJ_DIR),/$(CFILES:.c=.o))
+OFILES = $(addprefix $(OBJ_DIR)/,$(CFILES:.c=.o))
 
 OBJ_DIR = ./OBJ
 

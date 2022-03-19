@@ -6,7 +6,7 @@
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/19 15:08:07 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/19 22:43:47 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main()
 {
-	ft_printf("%d\n",ft_isascii(4));
-	ft_printf("abas\n");
+	ft_printf("Makefile works\n");
 	return (0);
 }
