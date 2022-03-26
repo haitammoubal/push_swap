@@ -6,15 +6,19 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:05:53 by hmoubal           #+#    #+#             */
-/*   Updated: 2021/11/08 09:10:47 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/26 15:20:25 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include<stdlib.h>
 # include<unistd.h>
+# include<stdlib.h>
+# include<stdarg.h>
+# include <stdio.h>
+# include <limits.h>
+# include<string.h>
 
 typedef struct s_list
 {
@@ -68,4 +72,13 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst,	void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_printf(const char *str, ...);
+void	cal(unsigned long n, unsigned long nb, char *base, int *count);
+void	cal_int(long int n, long int nb, char *base, int *count);
+void	ft_putstr(char *str, int *count);
+void	ft_detect1(va_list hub, char *str, int *count);
+void	ft_detect2(va_list hub, char *str, int *count);
+void	ft_detect3(va_list hub, char *str, int *count);
+void	ft_sep(va_list hub, char **str, int *count);
+
 #endif
