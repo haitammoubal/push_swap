@@ -12,20 +12,18 @@ SRC_DIR = ./SRC
 
 LIB = libft/libft.a
 
-PRINT = printf/libftprintf.a
-
 INC = includes/push_swap.h
 
 NAME = push_swap
 
-$(NAME) : $(LIB) $(PRINT) $(OFILES)
-	@$(CC) $(CFLAGS) $(OFILES) $(LIB) $(PRINT) -o $(NAME)
+$(NAME) : $(LIB) $(OFILES)
+	@$(CC) $(CFLAGS) $(OFILES) $(LIB) -o $(NAME)
+	@echo "done for push_swap"
 
-$(LIB) :
-	make -C libft
+$(LIB): force
+	@make -C libft
 
-$(PRINT) :
-	make -C printf
+force:
 
 $(OBJ_DIR) :
 	@mkdir OBJ
@@ -35,12 +33,10 @@ $(OFILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INC) | $(OBJ_DIR)
 
 clean :
 	@rm -rf $(OBJ_DIR)
-	@make clean -C printf
 	@make clean -C libft
 
 fclean : clean
 	@rm -rf $(NAME)
-	@make fclean -C printf
 	@make fclean -C libft
 
 re : fclean all
