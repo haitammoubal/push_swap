@@ -3,17 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/26 15:39:13 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/26 17:15:04 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(void)
+int main(int ac, char **av)
 {
-	ft_printf("Makefile works\n");
+	int	i;
+
+	i = 1;
+	if (ac == 1)
+		return (1);
+	ft_checknumbers(av, ac);
+	ft_printf("asnd\n");
 	return (0);
 }

@@ -3,6 +3,7 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 CFILES = push_swap.c\
+		ft_checknumbers.c\
 
 OFILES = $(addprefix $(OBJ_DIR)/,$(CFILES:.c=.o))
 
