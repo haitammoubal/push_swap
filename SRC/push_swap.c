@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/26 17:15:04 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/27 17:28:28 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int main(int ac, char **av)
 		return (1);
 	ft_checknumbers(av, ac);
 	ft_printf("asnd\n");
+	while(1);
 	return (0);
 }

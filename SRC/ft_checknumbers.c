@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checknumbers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/26 12:44:38 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/27 17:50:20 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_free_all(char **str)
 
 	i = 0;
 	while(str[i])
-		free(str[i]);
+		free(str[i++]);
 	free(str);
 }
 void ft_checknumbers(char **av, int ac)
@@ -37,10 +37,9 @@ void ft_checknumbers(char **av, int ac)
 		if (num[k] == NULL)
 		{
 			ft_printf("Error\n");
-			// ft_free_all(num);
+			ft_free_all(num);
 			exit(1);
 		}
-		printf("ash\n");
 		while (num[k])
 		{
 			j = 0;
@@ -49,14 +48,14 @@ void ft_checknumbers(char **av, int ac)
 				if (ft_isdigit(num[k][j]) == 0)
 				{
 					ft_printf("Error\n");
-					// ft_free_all(num);
+					ft_free_all(num);
 					exit(1);
 				}
 				j++;
 			}
 			k++;
 		}
+		ft_free_all(num);
 		i++;
-		// ft_free_all(num);
 	}
 }
