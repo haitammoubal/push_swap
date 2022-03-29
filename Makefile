@@ -19,7 +19,7 @@ INC = includes/push_swap.h
 NAME = push_swap
 
 $(NAME) : $(LIB) $(OFILES)
-	@$(CC) $(CFLAGS) $(OFILES) $(LIB) -o $(NAME)
+	@$(CC) $(OFILES) $(LIB) -o $(NAME)
 	@echo "done for push_swap"
 
 $(LIB): force
@@ -31,7 +31,7 @@ $(OBJ_DIR) :
 	@mkdir OBJ
 
 $(OFILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INC) | $(OBJ_DIR)
-	@$(CC) -c $< -o $@
+	@$(CC) -c $(CFLAGS) $< -o $@
 
 clean :
 	@rm -rf $(OBJ_DIR)
