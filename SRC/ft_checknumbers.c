@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checknumbers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/27 22:19:02 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/28 23:48:14 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ void	ft_cont(char **num, int k, int j)
 		{
 			j = ft_count(num, k, j);
 			if (ft_isdigit(num[k][j]) == 0)
-			{
-				ft_printf("Error\n");
-				ft_free_all(num);
-				exit(1);
-			}
+				ft_error(num);
 			j++;
 		}
 		k++;
@@ -65,11 +61,7 @@ void	ft_checknumbers(char **av, int ac)
 		k = 0;
 		num = ft_split(av[i], 32);
 		if (num[k] == NULL)
-		{
-			ft_printf("Error\n");
-			ft_free_all(num);
-			exit(1);
-		}
+			ft_error(num);
 		ft_cont(num, k, j);
 		ft_free_all(num);
 		i++;

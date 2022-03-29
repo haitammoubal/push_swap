@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 15:31:27 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/28 23:43:42 by hmoubal          ###   ########.fr       */
+/*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
+/*   Updated: 2022/03/28 23:51:18 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/push_swap.h"
 
-int	ft_atoi(const	char	*str)
+void	ft_error(char **num)
 {
-	int	i;
-	int	sign;
-	int	r;
+	ft_printf("Error\n");
+	ft_free_all(num);
+	exit(1);
+}
+
+int	ft_atoi_custom(const	char	*str, char **num)
+{
+	int			i;
+	int			sign;
+	long int	r;
 
 	i = 0;
 	sign = 1;
@@ -34,5 +41,33 @@ int	ft_atoi(const	char	*str)
 		r = (r * 10) + (str[i] - 48);
 		i++;
 	}
+	if ((r * sign) > 2147483647 || (r * sign) < -2147483648)
+		ft_error(num);
 	return (sign * r);
+}
+
+void	ft_double(char **av, int ac)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	**num;
+	int		*tab;
+
+	i = 1;
+	num = NULL;
+	k = 0;
+	tab = NULL;
+	while (av[i])
+	{
+		j = 0;
+		num = ft_split(av[i], 32);
+		while (num[j])
+		{
+			k = ft_atoi_custom(num[j], num);
+			j++;
+		}
+		ft_free_all(num);
+		i++;
+	}
 }

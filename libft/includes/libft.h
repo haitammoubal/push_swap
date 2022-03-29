@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:05:53 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/26 15:20:25 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/28 23:43:49 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-int		ft_atoi(const char *str);
+int		ft_atoi(const	char	*str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t a, size_t i);
 int		ft_isalnum(int a);
