@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/29 20:05:17 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/29 21:23:28 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_cont1(char **num, t_int ints, int *tab)
+void	ft_cont1(char **num, t_int *ints, int *tab)
 {
-	while (num[ints.j])
+	while (num[ints->j])
 	{
-		ints.k = ft_atoi_custom(num[ints.j], num);
-		while (ints.p <= ints.l)
+		ints->p = 0;
+		ints->k = ft_atoi_custom(num[ints->j], num);
+		while (ints->p <= ints->l)
 		{
-			if (tab[ints.p] == ints.k)
+			if (tab[ints->p] == ints->k)
 			{
 				free(tab);
 				ft_free_all(num);
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr_fd("Error1\n", 2);
 				exit(1);
 			}
-			(ints.p)++;
+			(ints->p)++;
 		}
-		tab[ints.l] = ints.k;
-		(ints.l)++;
-		(ints.j)++;
-		ints.p = 0;
+		tab[ints->l] = ints->k;
+		(ints->l)++;
+		(ints->j)++;
 	}
 }
 
@@ -39,6 +39,7 @@ void	ft_error(char **num)
 {
 	ft_putstr_fd("Error\n", 2);
 	ft_free_all(num);
+	while(1);
 	exit(1);
 }
 
@@ -85,7 +86,7 @@ int	*ft_double(char **av, int sum)
 	{
 		ints.j = 0;
 		num = ft_split(av[ints.i], 32);
-		ft_cont1(num, ints, tab);
+		ft_cont1(num, &ints, tab);
 		ft_free_all(num);
 		(ints.i)++;
 	}
