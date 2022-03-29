@@ -3,18 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/28 23:51:18 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/29 20:05:17 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	ft_cont1(char **num, t_int ints, int *tab)
+{
+	while (num[ints.j])
+	{
+		ints.k = ft_atoi_custom(num[ints.j], num);
+		while (ints.p <= ints.l)
+		{
+			if (tab[ints.p] == ints.k)
+			{
+				free(tab);
+				ft_free_all(num);
+				ft_putstr_fd("Error\n", 2);
+				exit(1);
+			}
+			(ints.p)++;
+		}
+		tab[ints.l] = ints.k;
+		(ints.l)++;
+		(ints.j)++;
+		ints.p = 0;
+	}
+}
+
 void	ft_error(char **num)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	ft_free_all(num);
 	exit(1);
 }
@@ -46,28 +69,25 @@ int	ft_atoi_custom(const	char	*str, char **num)
 	return (sign * r);
 }
 
-void	ft_double(char **av, int ac)
+int	*ft_double(char **av, int sum)
 {
-	int		i;
-	int		j;
-	int		k;
+	t_int	ints;
 	char	**num;
 	int		*tab;
 
-	i = 1;
+	ints.i = 1;
 	num = NULL;
-	k = 0;
-	tab = NULL;
-	while (av[i])
+	ints.k = 0;
+	ints.l = 0;
+	ints.p = 0;
+	tab = (int *)malloc(sum * sizeof(int));
+	while (av[ints.i])
 	{
-		j = 0;
-		num = ft_split(av[i], 32);
-		while (num[j])
-		{
-			k = ft_atoi_custom(num[j], num);
-			j++;
-		}
+		ints.j = 0;
+		num = ft_split(av[ints.i], 32);
+		ft_cont1(num, ints, tab);
 		ft_free_all(num);
-		i++;
+		(ints.i)++;
 	}
+	return (tab);
 }
