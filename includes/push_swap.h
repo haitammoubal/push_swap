@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/29 21:21:22 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/30 17:17:37 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,16 @@ typedef struct s_int{
 	int	j;
 	int	i;
 }	t_int;
+
+typedef struct s_stack{
+	int	*tab;
+	int	size;
+}	t_stack;
+
+typedef struct s_table{
+	t_stack	a;
+	t_stack	b;
+}	t_table;
 
 int		ft_checknumbers(char **av);
 void	ft_free_all(char **str);

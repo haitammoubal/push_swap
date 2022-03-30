@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/29 21:23:28 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/30 17:18:00 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	ft_error(char **num)
 {
 	ft_putstr_fd("Error\n", 2);
 	ft_free_all(num);
-	while(1);
 	exit(1);
 }
 
