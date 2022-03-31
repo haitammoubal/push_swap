@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/30 17:17:37 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/31 00:13:01 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,16 @@ int		*ft_double(char **av, int sum);
 int		ft_atoi_custom(const	char	*str, char **num);
 void	ft_error(char **num);
 void	ft_cont1(char **num, t_int *ints, int *tab);
+void	ft_check_sorted(t_table *m, t_int var);
+void	sa(t_table *m, t_int var);
+void	sb(t_table *m, t_int var);
+void	ss(t_table *m, t_int var);
+void	pa(t_table *m, t_int var);
+void	pb(t_table *m, t_int var);
+void	ra(t_table *m, t_int var);
+void	rb(t_table *m, t_int var);
+void	rr(t_table *m, t_int var);
+void	rra(t_table *m, t_int var);
+void	rrb(t_table *m, t_int var);
+void	rrr(t_table *m, t_int var);
 #endif

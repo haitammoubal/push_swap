@@ -5,6 +5,10 @@ CFLAGS = -Wall -Werror -Wextra
 CFILES = push_swap.c\
 		ft_checknumbers.c\
 		ft_double.c\
+		ft_move.c\
+		ft_check_sorted.c\
+		ft_move2.c\
+		ft_move3.c\
 
 OFILES = $(addprefix $(OBJ_DIR)/,$(CFILES:.c=.o))
 

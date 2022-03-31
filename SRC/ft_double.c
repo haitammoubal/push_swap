@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/30 17:18:00 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/03/30 19:20:57 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_cont1(char **num, t_int *ints, int *tab)
 			{
 				free(tab);
 				ft_free_all(num);
-				ft_putstr_fd("Error1\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				exit(1);
 			}
 			(ints->p)++;

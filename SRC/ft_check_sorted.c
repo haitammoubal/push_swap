@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:35:10 by haitam           ###   ########.fr       */
+/*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
+/*   Updated: 2022/03/31 00:34:00 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_check_sorted(t_table *m, t_int var)
 {
-	t_table	m;
-	t_int	var;
-
-	if (ac == 1)
-		return (1);
-	m.a.size = ft_checknumbers(av);
-	m.a.tab = ft_double(av, m.a.size);
-	ft_check_sorted(&m, var);
-	m.b.size = m.a.size;
-	m.b.tab = (int *)malloc(m.b.size * sizeof(int));
-	return (0);
+	var.i = 0;
+	while (var.i < m->a.size - 1)
+	{
+		if (m->a.tab[var.i] > m->a.tab[(var.i) + 1])
+			break ;
+		(var.i)++;
+	}
+	if (var.i == m->a.size)
+	{
+		free(m->a.tab);
+		exit(0);
+	}
 }

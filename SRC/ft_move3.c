@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_move3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:35:10 by haitam           ###   ########.fr       */
+/*   Created: 2022/03/31 00:31:51 by haitam            #+#    #+#             */
+/*   Updated: 2022/03/31 00:34:57 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	rrr(t_table *m, t_int var)
 {
-	t_table	m;
-	t_int	var;
-
-	if (ac == 1)
-		return (1);
-	m.a.size = ft_checknumbers(av);
-	m.a.tab = ft_double(av, m.a.size);
-	ft_check_sorted(&m, var);
-	m.b.size = m.a.size;
-	m.b.tab = (int *)malloc(m.b.size * sizeof(int));
-	return (0);
+	rra(m, var);
+	rrb(m, var);
 }
