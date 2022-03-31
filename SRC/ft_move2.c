@@ -6,7 +6,7 @@
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:07:23 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:34:51 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/31 22:13:02 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ra(t_table *m, t_int var)
 {
+	if (m->a.used < 2)
+		return ;
 	var.i = m->a.tab[0];
 	var.j = 1;
 	while (var.j < m->a.size)
@@ -26,6 +28,8 @@ void	ra(t_table *m, t_int var)
 
 void	rb(t_table *m, t_int var)
 {
+	if (m->b.used < 2)
+		return ;
 	var.i = m->b.tab[0];
 	var.j = 1;
 	while (var.j < m->b.size)
@@ -44,6 +48,8 @@ void	rr(t_table *m, t_int var)
 
 void	rra(t_table *m, t_int var)
 {
+	if (m->a.used < 2)
+		return ;
 	var.i = m->a.tab[(m->a.size) - 1];
 	var.j = (m->a.size) - 1;
 	while (var.j != 0)
@@ -56,6 +62,8 @@ void	rra(t_table *m, t_int var)
 
 void	rrb(t_table *m, t_int var)
 {
+	if (m->b.used < 2)
+		return ;
 	var.i = m->b.tab[(m->b.size) - 1];
 	var.j = (m->b.size) - 1;
 	while (var.j != 0)

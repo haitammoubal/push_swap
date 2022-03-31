@@ -6,7 +6,7 @@
 /*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:13:01 by haitam           ###   ########.fr       */
+/*   Updated: 2022/03/31 21:33:51 by haitam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_int{
 typedef struct s_stack{
 	int	*tab;
 	int	size;
+	int	used;
 }	t_stack;
 
 typedef struct s_table{
