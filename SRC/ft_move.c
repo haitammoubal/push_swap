@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:45:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 22:09:11 by haitam           ###   ########.fr       */
+/*   Updated: 2022/04/01 17:54:19 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,14 @@ void	pa(t_table *m, t_int var)
 	if (m->b.used == 0)
 		return ;
 	var.i = m->b.tab[0];
-	var.j = m->a.size;
+	var.j = m->a.used;
 	while (var.j != 0)
 	{
+		if (var.j == 1)
+		{
+			m->b.tab[(var.j)] = m->b.tab[(var.j) - 1];
+			break ;
+		}
 		m->a.tab[(var.j) - 1] = var.k;
 		m->a.tab[(var.j) - 1] = m->a.tab[(var.j) - 2];
 		m->a.tab[(var.j) - 2] = var.k;
@@ -65,9 +70,14 @@ void	pb(t_table *m, t_int var)
 	if (m->a.used == 0)
 		return ;
 	var.i = m->a.tab[0];
-	var.j = m->b.size;
+	var.j = m->b.used;
 	while (var.j != 0)
 	{
+		if (var.j == 1)
+		{
+			m->b.tab[(var.j)] = m->b.tab[(var.j) - 1];
+			break ;
+		}
 		var.k = m->b.tab[(var.j) - 1];
 		m->b.tab[(var.j) - 1] = m->b.tab[(var.j) - 2];
 		m->b.tab[(var.j) - 2] = var.k;

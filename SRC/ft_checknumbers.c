@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_checknumbers.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/29 20:11:50 by haitam           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:11:20 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,25 +50,23 @@ void	ft_free_all(char **str)
 
 int	ft_checknumbers(char **av)
 {
-	int		i;
-	int		j;
-	int		k;
+	t_int	var;
 	char	**num;
 	int		sum;
 
-	i = 1;
+	var.i = 1;
 	sum = 0;
 	num = NULL;
-	j = 0;
-	while (av[i])
+	var.j = 0;
+	while (av[var.i])
 	{
-		k = 0;
-		num = ft_split(av[i], 32);
-		if (num[k] == NULL)
+		var.k = 0;
+		num = ft_split(av[var.i], 32);
+		if (num[var.k] == NULL)
 			ft_error(num);
-		ft_cont(num, k, j, &sum);
+		ft_cont(num, var.k, var.j, &sum);
 		ft_free_all(num);
-		i++;
+		(var.i)++;
 	}
 	return (sum);
 }

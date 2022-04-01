@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_sorted.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:34:00 by haitam           ###   ########.fr       */
+/*   Updated: 2022/04/01 18:14:43 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_check_sorted(t_table *m, t_int var)
+void	ft_check_sorted(t_table *m)
 {
+	t_int var;
+
 	var.i = 0;
 	while (var.i < m->a.size - 1)
 	{
