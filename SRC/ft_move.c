@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:45:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/01 17:54:19 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/02 22:51:46 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	pa(t_table *m, t_int var)
 	{
 		if (var.j == 1)
 		{
-			m->b.tab[(var.j)] = m->b.tab[(var.j) - 1];
+			m->a.tab[(var.j)] = m->a.tab[(var.j) - 1];
 			break ;
 		}
-		m->a.tab[(var.j) - 1] = var.k;
+		var.k = m->a.tab[(var.j) - 1];
 		m->a.tab[(var.j) - 1] = m->a.tab[(var.j) - 2];
-		m->a.tab[(var.j) - 2] = var.k;
+		m->a.tab[(var.j)] = var.k;
 		(var.j)--;
 	}
 	var.k = 0;
@@ -80,7 +80,7 @@ void	pb(t_table *m, t_int var)
 		}
 		var.k = m->b.tab[(var.j) - 1];
 		m->b.tab[(var.j) - 1] = m->b.tab[(var.j) - 2];
-		m->b.tab[(var.j) - 2] = var.k;
+		m->b.tab[(var.j)] = var.k;
 		(var.j)--;
 	}
 	var.k = 0;

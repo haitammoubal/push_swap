@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/01 20:53:32 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/02 22:59:31 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_check_sorted(t_table *m)
 {
-	t_int var;
+	t_int	var;
 
 	var.i = 0;
 	while (var.i < m->a.size - 1)
