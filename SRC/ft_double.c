@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/03/30 19:20:57 by haitam           ###   ########.fr       */
+/*   Updated: 2022/04/01 21:15:27 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_cont1(char **num, t_int *ints, int *tab)
 	{
 		ints->p = 0;
 		ints->k = ft_atoi_custom(num[ints->j], num);
-		while (ints->p <= ints->l)
+		while (ints->p < ints->l)
 		{
 			if (tab[ints->p] == ints->k)
 			{

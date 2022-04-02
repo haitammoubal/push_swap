@@ -9,6 +9,7 @@ CFILES = push_swap.c\
 		ft_check_sorted.c\
 		ft_move2.c\
 		ft_move3.c\
+		ft_sorting.c\
 
 OFILES = $(addprefix $(OBJ_DIR)/,$(CFILES:.c=.o))
 
