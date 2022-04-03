@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:45:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/03 05:38:42 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 21:26:36 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ void	pa(t_table *m, t_int var)
 	if (m->b.used == 0)
 		return ;
 	var.i = m->b.tab[0];
-	var.j = m->a.used;
-	while (var.j != 0)
+	var.j = m->a.used + 1;
+	while (--var.j != 0)
 	{
 		if (var.j == 1)
 		{
@@ -55,7 +55,6 @@ void	pa(t_table *m, t_int var)
 		var.k = m->a.tab[(var.j) - 1];
 		m->a.tab[(var.j) - 1] = m->a.tab[(var.j) - 2];
 		m->a.tab[(var.j)] = var.k;
-		(var.j)--;
 	}
 	var.k = 0;
 	while (var.k <= m->b.used)
@@ -74,8 +73,8 @@ void	pb(t_table *m, t_int var)
 	if (m->a.used == 0)
 		return ;
 	var.i = m->a.tab[0];
-	var.j = m->b.used;
-	while (var.j != 0)
+	var.j = m->b.used + 1;
+	while (--var.j != 0)
 	{
 		if (var.j == 1)
 		{
@@ -85,7 +84,6 @@ void	pb(t_table *m, t_int var)
 		var.k = m->b.tab[(var.j) - 1];
 		m->b.tab[(var.j) - 1] = m->b.tab[(var.j) - 2];
 		m->b.tab[(var.j)] = var.k;
-		(var.j)--;
 	}
 	var.k = 0;
 	while (var.k <= m->a.used)

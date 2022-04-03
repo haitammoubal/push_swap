@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 05:24:51 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/03 21:12:49 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 21:28:03 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,12 @@ void	ft_six_ten(t_table *m)
 	if (var.i <= 5 && var.i > 0)
 	{
 		while (ft_search(m) != 1)
-		{
 			ra(m, var);
-		}
 		ra(m, var);
 	}
 	if (var.i > 5)
-	{
 		while (ft_search(m) != 0)
-		{
 			rra(m, var);
-		}
-	}
 	if (ft_check_sorted(m) == 1)
 		return (free(m->a.tab), free(m->b.tab));
 	pb(m, var);
@@ -67,14 +61,4 @@ void	ft_six_ten(t_table *m)
 	else
 		ft_six_ten(m);
 	pa(m, var);
-}
-
-void	ft_11_100(t_table *m)
-{
-
-}
-
-void	ft_101_500(t_table *m)
-{
-
 }

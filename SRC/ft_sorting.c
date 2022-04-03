@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:36:50 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/03 21:12:16 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 21:27:29 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,4 @@ void	ft_sorting(t_table *m, int ac)
 		ft_five(m);
 	else if (ac >= 7 && ac <= 11)
 		ft_six_ten(m);
-	else if (ac > 11 && ac <= 101)
-		ft_11_100(m);
-	else if (ac > 101 && ac <= 501)
-		ft_101_500(m);
 }
