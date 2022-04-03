@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:07:23 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/01 17:56:07 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 05:39:17 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ra(t_table *m, t_int var)
 		(var.j)++;
 	}
 	m->a.tab[var.j - 1] = var.i;
+	ft_printf("ra\n");
 }
 
 void	rb(t_table *m, t_int var)
@@ -38,12 +39,14 @@ void	rb(t_table *m, t_int var)
 		(var.j)++;
 	}
 	m->b.tab[var.j - 1] = var.i;
+	ft_printf("rb\n");
 }
 
 void	rr(t_table *m, t_int var)
 {
 	ra(m, var);
 	rb(m, var);
+	ft_printf("rr\n");
 }
 
 void	rra(t_table *m, t_int var)
@@ -58,6 +61,7 @@ void	rra(t_table *m, t_int var)
 		m->a.tab[(var.j) + 1] = m->a.tab[var.j];
 	}
 	m->a.tab[var.j] = var.i;
+	ft_printf("rra\n");
 }
 
 void	rrb(t_table *m, t_int var)
@@ -72,4 +76,5 @@ void	rrb(t_table *m, t_int var)
 		m->b.tab[(var.j) + 1] = m->b.tab[var.j];
 	}
 	m->b.tab[var.j] = var.i;
+	ft_printf("rrb\n");
 }

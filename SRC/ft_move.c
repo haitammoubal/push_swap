@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 18:45:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/02 22:51:46 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 05:38:42 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	sa(t_table *m, t_int var)
 	var.i = m->a.tab[0];
 	m->a.tab[0] = m->a.tab[1];
 	m->a.tab[1] = var.i;
+	ft_printf("sa\n");
 }
 
 void	sb(t_table *m, t_int var)
@@ -28,12 +29,14 @@ void	sb(t_table *m, t_int var)
 	var.i = m->b.tab[0];
 	m->b.tab[0] = m->b.tab[1];
 	m->b.tab[1] = var.i;
+	ft_printf("sb\n");
 }
 
 void	ss(t_table *m, t_int var)
 {
 	sa(m, var);
 	sb(m, var);
+	ft_printf("ss\n");
 }
 
 void	pa(t_table *m, t_int var)
@@ -63,6 +66,7 @@ void	pa(t_table *m, t_int var)
 	m->a.tab[0] = var.i;
 	(m->b.used)--;
 	(m->a.used)++;
+	ft_printf("pa\n");
 }
 
 void	pb(t_table *m, t_int var)
@@ -92,4 +96,5 @@ void	pb(t_table *m, t_int var)
 	m->b.tab[0] = var.i;
 	(m->b.used)++;
 	(m->a.used)--;
+	ft_printf("pb\n");
 }

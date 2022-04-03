@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_move3.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: haitam <haitam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:31:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/03/31 00:34:57 by haitam           ###   ########.fr       */
+/*   Updated: 2022/04/03 05:39:23 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,5 @@ void	rrr(t_table *m, t_int var)
 {
 	rra(m, var);
 	rrb(m, var);
+	ft_printf("rrr\n");
 }

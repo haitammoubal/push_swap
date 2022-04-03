@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/02 22:59:31 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/03 05:22:28 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_sorted(t_table *m)
 	t_int	var;
 
 	var.i = 0;
-	while (var.i < m->a.size - 1)
+	while (var.i < m->a.used - 1)
 	{
 		if (m->a.tab[var.i] > m->a.tab[(var.i) + 1])
 			return (0);
