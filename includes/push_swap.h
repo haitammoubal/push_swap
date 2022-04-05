@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/03 21:14:05 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/04 16:24:31 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,7 @@ void	ft_three(t_table *m);
 void	ft_four(t_table *m);
 void	ft_five(t_table *m);
 void	ft_six_ten(t_table *m);
-void	ft_11_100(t_table *m);
-void	ft_101_500(t_table *m);
+void	ft_big_sort(t_table *m);
 int		ft_search(t_table *m);
 void	sa(t_table *m, t_int var);
 void	sb(t_table *m, t_int var);
