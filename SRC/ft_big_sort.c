@@ -26,7 +26,8 @@ void	ft_moveall(t_table *m, int *tab, int index)
 		{
 			if (m->a.tab[var.i] == tab[var.j])
 			{
-				ft_send(m, index);
+				ft_send(m, var.i);
+				var.i = -1;
 				break ;
 			}
 			(var.j)++;

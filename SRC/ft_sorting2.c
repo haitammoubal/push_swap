@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 05:24:51 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/03 21:28:03 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 12:15:15 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,12 @@ void	ft_five(t_table *m)
 	if (var.i <= 2 && var.i > 0)
 	{
 		while (ft_search(m) != 1)
-		{
 			ra(m, var);
-		}
 		ra(m, var);
 	}
 	if (var.i > 2)
-	{
 		while (ft_search(m) != 0)
-		{
 			rra(m, var);
-		}
-	}
 	if (ft_check_sorted(m) == 1)
 		return (free(m->a.tab), free(m->b.tab));
 	pb(m, var);
