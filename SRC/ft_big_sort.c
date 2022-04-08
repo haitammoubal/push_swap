@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/08 12:35:36 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 13:05:51 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,12 @@ void	ft_moveall(t_table *m, int *tab, int index)
 	while (var.i < m->a.used)
 	{
 		var.j = 0;
-		while (var.j < index)
-		{
-			if (m->a.tab[var.i] == tab[var.j])
-			{
-				ft_send(m, var.i);
-				var.i = -1;
-				break ;
-			}
+		while (m->a.tab[var.i] != tab[var.j] && var.j < index)
 			(var.j)++;
+		if (var.j == index)
+		{
+			ft_send(m, var.i);
+			var.i = -1;
 		}
 		(var.i)++;
 	}
