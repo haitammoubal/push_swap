@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 09:57:15 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/08 12:15:50 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 12:33:22 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	ft_send(t_table *m, int index)
 	else if (index < (m->a.used / 2))
 		while (m->a.tab[0] != var.i)
 			rra(m, var);
-	pb(m,var);
+	pb(m, var);
 }

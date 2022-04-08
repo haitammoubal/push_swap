@@ -1,5 +1,3 @@
-
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -8,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/04 16:47:49 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 12:35:36 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +68,11 @@ void	ft_algo(t_table *m, int **tab_len, int **tab_sub)
 		(*tab_len)[var.i] = 1;
 		(var.i)++;
 	}
-	var.i = 1;
-	while (var.i < m->a.size)
+	var.i = 0;
+	while (++(var.i) < m->a.size)
 	{
-		var.j = 0;
-		while (var.j < var.i)
+		var.j = -1;
+		while (++(var.j) < var.i)
 		{
 			if (m->a.tab[var.j] < m->a.tab[var.i])
 			{
@@ -85,9 +83,7 @@ void	ft_algo(t_table *m, int **tab_len, int **tab_sub)
 					(*tab_sub)[var.i] = var.j;
 				}
 			}
-			(var.j)++;
 		}
-		(var.i)++;
 	}
 }
 
@@ -117,7 +113,7 @@ void	ft_big_sort(t_table *m)
 {
 	int		*tab_len;
 	int		*tab_sub;
-	int *tab;
+	int		*tab;
 	t_int	var;
 
 	tab_len = (int *)malloc((m->a.size) * sizeof(int));
