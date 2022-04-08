@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 18:36:50 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/08 12:36:13 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 13:29:43 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,19 @@ void	ft_four(t_table *m)
 
 void	ft_sorting(t_table *m, int ac)
 {
-	if (ac == 2)
-		return ;
-	else if (ac == 3)
-		ft_two(m);
-	else if (ac == 4)
-		ft_three(m);
-	else if (ac == 5)
-		ft_four(m);
-	else if (ac == 6)
-		ft_five(m);
-	else if (ac >= 7 && ac <= 11)
-		ft_six_ten(m);
-	else if (ac > 11 && ac <= 101)
+	// if (ac == 2)
+	// 	return ;
+	// else if (ac == 3)
+	// 	ft_two(m);
+	// else if (ac == 4)
+	// 	ft_three(m);
+	// else if (ac == 5)
+	// 	ft_four(m);
+	// else if (ac == 6)
+	// 	ft_five(m);
+	// else if (ac >= 7 && ac <= 11)
+	// 	ft_six_ten(m);
+	// else if (ac > 11 && ac <= 101)
+	(void)ac;
 		ft_big_sort(m);
 }
