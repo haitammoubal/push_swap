@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/08 13:57:22 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/08 22:16:27 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_moveall(t_table *m, int *tab, int index)
 			(var.j)++;
 		if (var.j == index)
 		{
-			printf("dsgs  %d  %d\n",var.j, var.i);
+			//printf("dsgs  %d  %d\n",var.j, var.i);
 			ft_send(m, var.i);
 			var.i = -1;
 		}
@@ -118,10 +118,27 @@ void	ft_big_sort(t_table *m)
 	tab_sub = (int *)malloc((m->a.size) * sizeof(int));
 	ft_algo(m, &tab_len, &tab_sub);
 	var.l = ft_search2(tab_len, m);
-	// printf("\n%d\n",var.l);
 	var.p = tab_len[var.l];
+	//printf("afasd  %d\n",var.p);
 	tab = ft_big_sort2(&var, m, tab_len, tab_sub);
-	// printf("\n%d\n",tab[0]);
-	// printf("\n%d\n",tab[1]);
+	//printf("dfg\n%d\n",tab[0]);
+	//printf("gdf\n%d\n",tab[1]);
 	ft_moveall(m, tab, var.p);
+	var.i = 0;
+	while (var.i < m->b.used)
+	{
+		var.j = 0;
+		while (var.j < m->a.used)
+		{
+			if (m->a.tab[var.j] && m->b.tab[var.i] && m->a.tab[var.j + 1] &&
+				m->a.tab[var.j] < m->b.tab[var.i] && m->b.tab[var.i] < m->a.tab[var.j + 1])
+			{
+				ft_putnbr_fd(m->b.tab[var.i],0);
+				ft_putendl_fd("----",0);
+				break ;
+			}
+			var.j++;
+		}
+		var.i++;
+	}
 }
