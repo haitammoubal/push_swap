@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/08 22:16:27 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/11 23:01:33 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,60 @@ int	ft_search2(int *tab_len, t_table *m)
 	return (var.i);
 }
 
+int	*ft_copy(t_table *m)
+{
+	int		*tmp;
+	t_int	var;
+
+	var.i = 0;
+	tmp = (int *)malloc(m->a.size * sizeof(int));
+	while (var.i < m->a.size)
+	{
+		tmp[var.i] = m->a.tab[var.i];
+		(var.i)++;
+	}
+	return (tmp);
+}
+
+int	ft_find_big_seq(t_table *m)
+{
+	int		*tab_len;
+	int		*tab_sub;
+	int		*tab;
+	int		*tmp;
+	t_int	var;
+
+	var.i = 0;
+	tab_len = (int *)malloc((m->a.size) * sizeof(int));
+	tab_sub = (int *)malloc((m->a.size) * sizeof(int));
+	tab = (int *)malloc((m->a.size) * sizeof(int));
+	tmp = ft_copy(m);
+	while (var.i < m->a.size)
+	{
+		ft_algo(m, &tab_len, &tab_sub);
+		var.l = ft_search2(tab_len, m);
+		var.p = tab_len[var.l];
+		tab[var.i] = var.p;
+		(var.i)++;
+		var.k = tmp[0];
+		var.j = 1;
+		while (var.j < m->a.used)
+		{
+			tmp[(var.j) - 1] = tmp[var.j];
+			(var.j)++;
+		}
+		tmp[var.j - 1] = var.k;
+	}
+	var.i = 0;
+	while (var.i < m->a.size)
+	{
+		printf("%d\n", tab[var.i]);
+		(var.i)++;
+	}
+	var.i = tab[ft_search2(tab, m)];
+	return (free(tab), free(tab_len), free(tab_sub), var.i);
+}
+
 void	ft_big_sort(t_table *m)
 {
 	int		*tab_len;
@@ -114,31 +168,36 @@ void	ft_big_sort(t_table *m)
 	int		*tab;
 	t_int	var;
 
+	var.big_seq = ft_find_big_seq(m);
 	tab_len = (int *)malloc((m->a.size) * sizeof(int));
 	tab_sub = (int *)malloc((m->a.size) * sizeof(int));
 	ft_algo(m, &tab_len, &tab_sub);
 	var.l = ft_search2(tab_len, m);
 	var.p = tab_len[var.l];
-	//printf("afasd  %d\n",var.p);
-	tab = ft_big_sort2(&var, m, tab_len, tab_sub);
-	//printf("dfg\n%d\n",tab[0]);
-	//printf("gdf\n%d\n",tab[1]);
-	ft_moveall(m, tab, var.p);
-	var.i = 0;
-	while (var.i < m->b.used)
+	if (var.big_seq != var.p)
 	{
-		var.j = 0;
-		while (var.j < m->a.used)
-		{
-			if (m->a.tab[var.j] && m->b.tab[var.i] && m->a.tab[var.j + 1] &&
-				m->a.tab[var.j] < m->b.tab[var.i] && m->b.tab[var.i] < m->a.tab[var.j + 1])
-			{
-				ft_putnbr_fd(m->b.tab[var.i],0);
-				ft_putendl_fd("----",0);
-				break ;
-			}
-			var.j++;
-		}
-		var.i++;
+		ra(m, var);
+		free(tab_len);
+		free(tab_sub);
+		ft_big_sort(m);
 	}
+	tab = ft_big_sort2(&var, m, tab_len, tab_sub);
+	ft_moveall(m, tab, var.p);
+	// var.i = 0;
+	// while (var.i < m->b.used)
+	// {
+	// 	var.j = 0;
+	// 	while (var.j < m->a.used)
+	// 	{
+	// 		if (m->a.tab[var.j] && m->b.tab[var.i] && m->a.tab[var.j + 1] &&
+	// 			m->a.tab[var.j] < m->b.tab[var.i] && m->b.tab[var.i] < m->a.tab[var.j + 1])
+	// 		{
+	// 			ft_putnbr_fd(m->b.tab[var.i],0);
+	// 			ft_putendl_fd("----",0);
+	// 			break ;
+	// 		}
+	// 		var.j++;
+	// 	}
+	// 	var.i++;
+	// }
 }

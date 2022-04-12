@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/08 11:50:08 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/11 22:55:43 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_int{
 	int	k;
 	int	j;
 	int	i;
+	int	big_seq;
 }	t_int;
 
 typedef struct s_stack{
