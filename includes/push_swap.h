@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/11 22:55:43 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 00:37:01 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ typedef struct s_int{
 	int	k;
 	int	j;
 	int	i;
-	int	big_seq;
+	int	pivot_3;
+	int	pivot_2;
+	int	p_pivot;
 }	t_int;
 
 typedef struct s_stack{
@@ -56,6 +58,7 @@ void	ft_algo(t_table *m, int **tab_len, int **tab_sub);
 void	ft_moveall(t_table *m, int *tab, int tab_size);
 void	ft_send(t_table *m, int index);
 int		ft_search(t_table *m);
+int		ft_check_sorted_tab(int *tab, int size);
 void	sa(t_table *m, t_int var);
 void	sb(t_table *m, t_int var);
 void	ss(t_table *m, t_int var);
