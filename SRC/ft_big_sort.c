@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/14 06:41:35 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 22:02:30 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	ft_check_less_than_pivot(t_table *m, t_int *var, int *tab)
 	return (0);
 }
 
-void	ft_big_sort(t_table *m)
+void	ft_big_sort(t_table *m, int div)
 {
 	int		*tab;
 	t_int	var;
@@ -84,7 +84,7 @@ void	ft_big_sort(t_table *m)
 	{
 		tab = ft_copy(m);
 		ft_sort(tab, m->a.used);
-		var.pivot_3 = (m->a.used) / 3;
+		var.pivot_3 = (m->a.used) / div;
 		var.pivot_2 = var.pivot_3 / 2;
 		var.j = 0;
 		var.p = 0;
