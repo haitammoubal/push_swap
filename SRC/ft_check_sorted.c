@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/14 06:42:16 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 06:46:24 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,6 @@ void	ft_big_sort2(t_table *m, t_int *var, int *tab)
 				(var->p)++;
 			}
 		}
-		if (ft_check_less_than_pivot(m, var, tab) == 0)
-			break ;
 		var->j++;
 	}
 }
