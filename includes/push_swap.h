@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/14 00:37:01 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 06:40:14 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,22 +52,24 @@ void	ft_four(t_table *m);
 void	ft_five(t_table *m);
 void	ft_six_ten(t_table *m);
 void	ft_big_sort(t_table *m);
-int		*ft_big_sort2(t_int *var, t_table *m, int *tab_len, int *tab_sub);
-int		ft_search2(int *tab_len, t_table *m);
-void	ft_algo(t_table *m, int **tab_len, int **tab_sub);
-void	ft_moveall(t_table *m, int *tab, int tab_size);
-void	ft_send(t_table *m, int index);
-int		ft_search(t_table *m);
+int		ft_search_min(t_table *m);
+int		ft_search_max(t_table *m);
 int		ft_check_sorted_tab(int *tab, int size);
-void	sa(t_table *m, t_int var);
-void	sb(t_table *m, t_int var);
+int		ft_check_less_than_pivot(t_table *m, t_int *var, int *tab);
+void	ft_big_sort2(t_table *m, t_int *var, int *tab);
+int		*ft_copy(t_table *m);
+void	ft_sort(int *tab, int size);
+void	ft_send(t_table *m);
+void	ft_free_stack(t_table *m);
+void	sa(t_table *m, t_int var, int id);
+void	sb(t_table *m, t_int var, int id);
 void	ss(t_table *m, t_int var);
 void	pa(t_table *m, t_int var);
 void	pb(t_table *m, t_int var);
-void	ra(t_table *m, t_int var);
-void	rb(t_table *m, t_int var);
+void	ra(t_table *m, t_int var, int id);
+void	rb(t_table *m, t_int var, int id);
 void	rr(t_table *m, t_int var);
-void	rra(t_table *m, t_int var);
-void	rrb(t_table *m, t_int var);
+void	rra(t_table *m, t_int var, int id);
+void	rrb(t_table *m, t_int var, int id);
 void	rrr(t_table *m, t_int var);
 #endif

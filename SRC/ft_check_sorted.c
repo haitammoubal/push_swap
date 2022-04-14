@@ -6,11 +6,56 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/03 05:22:28 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 06:42:16 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+void	ft_free_stack(t_table *m)
+{
+	free(m->a.tab);
+	free(m->b.tab);
+}
+
+int	ft_search_max(t_table *m)
+{
+	t_int	var;
+
+	var.i = 1;
+	var.k = m->b.tab[0];
+	while (var.i < m->b.used)
+	{
+		if (var.k < m->b.tab[var.i])
+			var.k = m->b.tab[var.i];
+		(var.i)++;
+	}
+	var.i = 0;
+	while (var.i < m->b.used)
+	{
+		if (var.k == m->b.tab[var.i])
+			break ;
+		(var.i)++;
+	}
+	return (var.i);
+}
+
+void	ft_send(t_table *m)
+{
+	t_int	var;
+
+	var.i = ft_search_max(m);
+	if (var.i <= 50 && var.i > 0)
+	{
+		while (ft_search_max(m) != 1)
+			rb(m, var, 1);
+		rb(m, var, 1);
+	}
+	if (var.i > 50)
+		while (ft_search_max(m) != 0)
+			rrb(m, var, 1);
+	pa(m, var);
+}
 
 int	ft_check_sorted(t_table *m)
 {
@@ -24,4 +69,35 @@ int	ft_check_sorted(t_table *m)
 		(var.i)++;
 	}
 	return (1);
+}
+
+void	ft_big_sort2(t_table *m, t_int *var, int *tab)
+{
+	while (var->p <= var->pivot_3)
+	{
+		if (m->a.tab[var->j] <= tab[var->pivot_3])
+		{
+			if (m->b.used > 1)
+			{
+				if (m->b.tab[0] <= tab[var->pivot_2]
+					&& m->a.tab[0] > tab[var->pivot_3])
+				{
+					rr(m, (*var));
+					var->j--;
+				}
+				else if (m->b.tab[0] <= tab[var->pivot_2])
+					rb(m, (*var), 1);
+			}
+			while (var->j-- != 0)
+				ra(m, (*var), 1);
+			if (m->a.tab[0] <= tab[var->pivot_3])
+			{
+				pb(m, (*var));
+				(var->p)++;
+			}
+		}
+		if (ft_check_less_than_pivot(m, var, tab) == 0)
+			break ;
+		var->j++;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:31:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/03 05:39:23 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 06:01:32 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rrr(t_table *m, t_int var)
 {
-	rra(m, var);
-	rrb(m, var);
+	rra(m, var, 0);
+	rrb(m, var, 0);
 	ft_printf("rrr\n");
 }
