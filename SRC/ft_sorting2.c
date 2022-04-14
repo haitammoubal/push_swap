@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/03 05:24:51 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/14 06:44:08 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 21:45:37 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ void	ft_six_ten(t_table *m)
 	t_int	var;
 
 	var.i = ft_search_min(m);
-	if (var.i <= 5 && var.i > 0)
+	if (var.i <= m->a.used / 2 && var.i > 0)
 	{
 		while (ft_search_min(m) != 1)
 			ra(m, var, 1);
 		ra(m, var, 1);
 	}
-	if (var.i > 5)
+	if (var.i > m->a.used / 2)
 		while (ft_search_min(m) != 0)
 			rra(m, var, 1);
 	if (ft_check_sorted(m) == 1)

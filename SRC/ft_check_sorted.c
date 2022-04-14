@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 19:05:36 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/14 06:46:24 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/14 21:44:39 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ void	ft_send(t_table *m)
 	t_int	var;
 
 	var.i = ft_search_max(m);
-	if (var.i <= 50 && var.i > 0)
+	if (var.i <= m->b.used / 2 && var.i > 0)
 	{
 		while (ft_search_max(m) != 1)
 			rb(m, var, 1);
 		rb(m, var, 1);
 	}
-	if (var.i > 50)
+	if (var.i >= m->b.used / 2)
 		while (ft_search_max(m) != 0)
 			rrb(m, var, 1);
 	pa(m, var);
