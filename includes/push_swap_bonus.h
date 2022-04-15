@@ -6,13 +6,13 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:32:06 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 10:04:43 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 10:52:20 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
-
+# define BUFFER_SIZE 1
 # include "../libft/includes/libft.h"
 
 typedef struct s_int{
@@ -48,10 +48,11 @@ void	ft_cont1_bonus(char **num, t_int *ints, int *tab);
 int		ft_check_sorted_bonus(t_table *m);
 void	ft_free_stack_bonus(t_table *m);
 void	ft_malloc_bonus(void *tab);
-void	ft_reset(char *tab);
 void	ft_check(t_table *m);
 void	ft_ifs(t_table *m, t_int var, char *tab);
 void	ft_unknown_move(t_table *m);
+char	*get_next_line(int fd);
+char	*ft_strjoin_custom(char const *s1,	char const *s2);
 void	sa(t_table *m, t_int var);
 void	sb(t_table *m, t_int var);
 void	ss(t_table *m, t_int var);

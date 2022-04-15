@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:31:25 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 10:05:10 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 10:54:18 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,45 +30,37 @@ void	ft_check(t_table *m)
 
 void	ft_ifs(t_table *m, t_int var, char *tab)
 {
-	if (ft_strncmp(tab, "sa", 2) == 0)
+	if (ft_strncmp(tab, "sa\n", 3) == 0)
 		sa(m, var);
-	else if (ft_strncmp(tab, "sb", 2) == 0)
+	else if (ft_strncmp(tab, "sb\n", 3) == 0)
 		sb(m, var);
-	else if (ft_strncmp(tab, "ss", 2) == 0)
+	else if (ft_strncmp(tab, "ss\n", 3) == 0)
 		ss(m, var);
-	else if (ft_strncmp(tab, "pa", 2) == 0)
+	else if (ft_strncmp(tab, "pa\n", 3) == 0)
 		pa(m, var);
-	else if (ft_strncmp(tab, "pb", 2) == 0)
+	else if (ft_strncmp(tab, "pb\n", 3) == 0)
 		pb(m, var);
-	else if (ft_strncmp(tab, "ra", 2) == 0)
+	else if (ft_strncmp(tab, "ra\n", 3) == 0)
 		ra(m, var);
-	else if (ft_strncmp(tab, "rb", 2) == 0)
+	else if (ft_strncmp(tab, "rb\n", 3) == 0)
 		rb(m, var);
-	else if (ft_strncmp(tab, "rr", 2) == 0)
+	else if (ft_strncmp(tab, "rr\n", 3) == 0)
 		rr(m, var);
-	else if (ft_strncmp(tab, "rra", 3) == 0)
+	else if (ft_strncmp(tab, "rra\n", 4) == 0)
 		rra(m, var);
-	else if (ft_strncmp(tab, "rrb", 3) == 0)
+	else if (ft_strncmp(tab, "rrb\n", 4) == 0)
 		rrb(m, var);
-	else if (ft_strncmp(tab, "rrr", 3) == 0)
+	else if (ft_strncmp(tab, "rrr\n", 4) == 0)
 		rrr(m, var);
 	else
 		ft_unknown_move(m);
-}
-
-void	ft_reset(char *tab)
-{
-	tab[0] = '\0';
-	tab[1] = '\0';
-	tab[2] = '\0';
-	tab[3] = '\0';
 }
 
 void	ft_malloc_bonus(void *tab)
 {
 	if (tab == NULL)
 	{
-		ft_printf("malloc error\n");
+		ft_putstr_fd("malloc error\n", 2);
 		exit(1);
 	}
 }
@@ -76,13 +68,12 @@ void	ft_malloc_bonus(void *tab)
 int	main(int ac, char **av)
 {
 	t_table	m;
-	char	tab[4];
+	char	*tab;
 	t_int	var;
 
 	if (ac == 1)
-		return (1);
+		return (0);
 	var.i = 0;
-	ft_reset(tab);
 	m.a.size = ft_checknumbers_bonus(av);
 	m.a.tab = ft_double_bonus(av, m.a.size);
 	m.a.used = m.a.size;
@@ -90,10 +81,12 @@ int	main(int ac, char **av)
 	m.b.tab = (int *)malloc(m.b.size * sizeof(int));
 	ft_malloc_bonus(m.b.tab);
 	m.b.used = 0;
-	while (read(0, tab, 3) != 0)
+	tab = get_next_line(0);
+	while (tab)
 	{
 		ft_ifs(&m, var, tab);
-		ft_reset(tab);
+		free(tab);
+		tab = get_next_line(0);
 	}
 	ft_check(&m);
 	return (0);

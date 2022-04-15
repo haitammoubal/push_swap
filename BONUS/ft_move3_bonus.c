@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:31:51 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 10:04:15 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 10:53:46 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_unknown_move(t_table *m)
 {
 	ft_putstr_fd("Error\n", 2);
 	ft_free_stack_bonus(m);
-	exit(0);
+	exit(1);
 }
