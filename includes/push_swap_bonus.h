@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:32:06 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 09:14:27 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 09:46:45 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ void	ft_cont1_bonus(char **num, t_int *ints, int *tab);
 int		ft_check_sorted_bonus(t_table *m);
 void	ft_free_stack_bonus(t_table *m);
 void	ft_malloc_bonus(void *tab);
+void	ft_reset(char *tab);
+void	sa(t_table *m, t_int var);
+void	sb(t_table *m, t_int var);
+void	ss(t_table *m, t_int var);
+void	pa(t_table *m, t_int var);
+void	pb(t_table *m, t_int var);
+void	ra(t_table *m, t_int var);
+void	rb(t_table *m, t_int var);
+void	rr(t_table *m, t_int var);
+void	rra(t_table *m, t_int var);
+void	rrb(t_table *m, t_int var);
+void	rrr(t_table *m, t_int var);
 #endif

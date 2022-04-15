@@ -17,6 +17,9 @@ BFILES = push_swap_bonus.c\
 		ft_checknumbers_bonus.c\
 		ft_double_bonus.c\
 		ft_check_sorted_bonus.c\
+		ft_move_bonus.c\
+		ft_move2_bonus.c\
+		ft_move3_bonus.c\
 
 OFILES = $(addprefix $(OBJ_DIR)/,$(CFILES:.c=.o))
 
