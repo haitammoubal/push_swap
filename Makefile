@@ -61,7 +61,7 @@ $(OFILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INC) | $(OBJ_DIR)
 
 
 bonus : $(LIB) $(BOFILES)
-	@$(CC) $(BOFILES) $(LIB) -o checker
+	@$(CC) $(BOFILES) $(LIB) -o $(bonus)
 	@echo "done for checker"
 
 $(OBJB_DIR) :
@@ -82,6 +82,4 @@ re : fclean all
 
 all : $(NAME)
 
-norme :
-	@norminette **/*.c
-	@norminette **/*.h
+.PHONY : re all clean fclean
