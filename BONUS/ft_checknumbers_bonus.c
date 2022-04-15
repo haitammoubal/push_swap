@@ -6,11 +6,40 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 08:56:21 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 11:11:10 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap_bonus.h"
+
+void	ft_over_bonus(char **num)
+{
+	int	i;
+	int	j;
+	int	n;
+
+	i = 0;
+	j = 0;
+	n = 0;
+	while (num[i])
+	{
+		while (num[i][j] != '\0')
+		{
+			if (num[i][j] == '-' || num[i][j] == '+')
+				j++;
+			while(num[i][j] == '0')
+				j++;
+			while (num[i][j])
+			{
+				j++;
+				n++;
+			}
+			if (n > 10)
+				ft_error_bonus(num);
+		}
+		i++;
+	}
+}
 
 void	ft_cont_bonus(char **num, int k, int j, int *sum)
 {
@@ -62,6 +91,7 @@ int	ft_checknumbers_bonus(char **av)
 	{
 		var.k = 0;
 		num = ft_split(av[var.i], 32);
+		ft_over_bonus(num);
 		ft_malloc_bonus(num);
 		if (num[var.k] == NULL)
 			ft_error_bonus(num);

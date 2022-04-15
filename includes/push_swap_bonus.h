@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:32:06 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 10:52:20 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 11:10:47 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	ft_ifs(t_table *m, t_int var, char *tab);
 void	ft_unknown_move(t_table *m);
 char	*get_next_line(int fd);
 char	*ft_strjoin_custom(char const *s1,	char const *s2);
+void	ft_over_bonus(char **num);
 void	sa(t_table *m, t_int var);
 void	sb(t_table *m, t_int var);
 void	ss(t_table *m, t_int var);
