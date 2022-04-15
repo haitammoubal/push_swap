@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 10:35:38 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 13:57:26 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,5 @@ int	main(int ac, char **av)
 	ft_malloc(m.b.tab);
 	m.b.used = 0;
 	ft_sorting(&m, m.a.size);
-	// printf("  stack a \n");
-	// int i = 0;
-	// while(i < m.a.used)
-	// {
-	// 	printf("%d\n",m.a.tab[i]);
-	// 	i++;
-	// }
-
-
-	// printf("  \nstack b \n");
-	// i = 0;
-	// while(i < m.b.used)
-	// {
-	// 	printf("%d\n",m.b.tab[i]);
-	// 	i++;
-	// }
 	return (0);
 }

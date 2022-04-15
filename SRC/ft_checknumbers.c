@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 11:09:52 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 13:57:18 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_over(char **num)
 		{
 			if (num[i][j] == '-' || num[i][j] == '+')
 				j++;
-			while(num[i][j] == '0')
+			while (num[i][j] == '0')
 				j++;
 			while (num[i][j])
 			{
