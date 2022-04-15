@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/14 22:03:38 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 09:05:33 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ int		*ft_copy(t_table *m);
 void	ft_sort(int *tab, int size);
 void	ft_send(t_table *m);
 void	ft_free_stack(t_table *m);
+void	ft_malloc(void *tab);
 void	sa(t_table *m, t_int var, int id);
 void	sb(t_table *m, t_int var, int id);
 void	ss(t_table *m, t_int var);

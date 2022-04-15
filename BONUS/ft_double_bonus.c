@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_double.c                                        :+:      :+:    :+:   */
+/*   ft_double_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 08:50:55 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 09:15:16 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../includes/push_swap_bonus.h"
 
-void	ft_cont1(char **num, t_int *ints, int *tab)
+void	ft_cont1_bonus(char **num, t_int *ints, int *tab)
 {
 	while (num[ints->j])
 	{
 		ints->p = 0;
-		ints->k = ft_atoi_custom(num[ints->j], num);
+		ints->k = ft_atoi_custom_bonus(num[ints->j], num);
 		while (ints->p < ints->l)
 		{
 			if (tab[ints->p] == ints->k)
 			{
 				free(tab);
-				ft_free_all(num);
+				ft_free_all_bonus(num);
 				ft_putstr_fd("Error\n", 2);
 				exit(1);
 			}
@@ -35,14 +35,14 @@ void	ft_cont1(char **num, t_int *ints, int *tab)
 	}
 }
 
-void	ft_error(char **num)
+void	ft_error_bonus(char **num)
 {
 	ft_putstr_fd("Error\n", 2);
-	ft_free_all(num);
+	ft_free_all_bonus(num);
 	exit(1);
 }
 
-int	ft_atoi_custom(const	char	*str, char **num)
+int	ft_atoi_custom_bonus(const	char	*str, char **num)
 {
 	int			i;
 	int			sign;
@@ -65,11 +65,11 @@ int	ft_atoi_custom(const	char	*str, char **num)
 		i++;
 	}
 	if ((r * sign) > 2147483647 || (r * sign) < -2147483648)
-		ft_error(num);
+		ft_error_bonus(num);
 	return (sign * r);
 }
 
-int	*ft_double(char **av, int sum)
+int	*ft_double_bonus(char **av, int sum)
 {
 	t_int	ints;
 	char	**num;
@@ -81,14 +81,14 @@ int	*ft_double(char **av, int sum)
 	ints.l = 0;
 	ints.p = 0;
 	tab = (int *)malloc(sum * sizeof(int));
-	ft_malloc(tab);
+	ft_malloc_bonus(tab);
 	while (av[ints.i])
 	{
 		ints.j = 0;
 		num = ft_split(av[ints.i], 32);
-		ft_malloc(num);
-		ft_cont1(num, &ints, tab);
-		ft_free_all(num);
+		ft_malloc_bonus(num);
+		ft_cont1_bonus(num, &ints, tab);
+		ft_free_all_bonus(num);
 		(ints.i)++;
 	}
 	return (tab);

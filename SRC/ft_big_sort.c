@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/14 22:02:30 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/15 08:52:09 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	*ft_copy(t_table *m)
 
 	var.i = 0;
 	tmp = (int *)malloc(m->a.used * sizeof(int));
+	ft_malloc(tmp);
 	while (var.i < m->a.used)
 	{
 		tmp[var.i] = m->a.tab[var.i];
