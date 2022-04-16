@@ -42,7 +42,7 @@ BINC = includes/push_swap_bonus.h
 
 NAME = push_swap
 
-bonus = checker
+CHECKER = checker
 
 $(NAME) : $(LIB) $(OFILES)
 	@$(CC) $(OFILES) $(LIB) -o $(NAME)
@@ -60,8 +60,10 @@ $(OFILES) : $(OBJ_DIR)/%.o : $(SRC_DIR)/%.c $(INC) | $(OBJ_DIR)
 	@$(CC) -c $(CFLAGS) $< -o $@
 
 
-bonus : $(LIB) $(BOFILES)
-	@$(CC) $(BOFILES) $(LIB) -o $(bonus)
+bonus : $(CHECKER)
+
+$(CHECKER) : $(LIB) $(BOFILES)
+	@$(CC) $(BOFILES) $(LIB) -o $(CHECKER)
 	@echo "done for checker"
 
 $(OBJB_DIR) :
@@ -75,7 +77,7 @@ clean :
 	@make clean -C libft
 
 fclean : clean
-	@rm -rf $(NAME) $(bonus)
+	@rm -rf $(NAME) $(CHECKER)
 	@make fclean -C libft
 
 re : fclean all
