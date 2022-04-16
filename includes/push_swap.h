@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 00:16:47 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 09:05:33 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/04/16 12:07:32 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	ft_big_sort(t_table *m, int div);
 int		ft_search_min(t_table *m);
 int		ft_search_max(t_table *m);
 int		ft_check_sorted_tab(int *tab, int size);
-int		ft_check_less_than_pivot(t_table *m, t_int *var, int *tab);
 void	ft_big_sort2(t_table *m, t_int *var, int *tab);
 int		*ft_copy(t_table *m);
 void	ft_sort(int *tab, int size);
