@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/04/15 13:57:18 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/13 20:55:34 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,9 @@ void	ft_cont(char **num, int k, int j, int *sum)
 {
 	while (num[k])
 	{
-		j = 0;
+		j = ft_count(num, k, j);
 		while (num[k][j])
 		{
-			j = ft_count(num, k, j);
 			if (ft_isdigit(num[k][j]) == 0)
 				ft_error(num);
 			j++;
