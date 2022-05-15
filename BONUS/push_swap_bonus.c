@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:31:25 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 10:54:18 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/15 18:24:01 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,19 @@ void	ft_ifs(t_table *m, t_int var, char *tab)
 		ft_unknown_move(m);
 }
 
-void	ft_malloc_bonus(void *tab)
+void	ft_malloc_bonus(void *tab, int *hub, int *t, char **str)
 {
+	int	i;
+
+	i = 0;
 	if (tab == NULL)
 	{
 		ft_putstr_fd("malloc error\n", 2);
+		free(hub);
+		free(t);
+		while (str[i] != NULL)
+			free(str[i++]);
+		free(str);
 		exit(1);
 	}
 }
@@ -79,7 +87,7 @@ int	main(int ac, char **av)
 	m.a.used = m.a.size;
 	m.b.size = m.a.size;
 	m.b.tab = (int *)malloc(m.b.size * sizeof(int));
-	ft_malloc_bonus(m.b.tab);
+	ft_malloc_bonus(m.b.tab, m.a.tab, NULL, NULL);
 	m.b.used = 0;
 	tab = get_next_line(0);
 	while (tab)

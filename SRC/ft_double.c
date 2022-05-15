@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 22:56:28 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 08:50:55 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/15 18:21:36 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,12 @@ int	*ft_double(char **av, int sum)
 	ints.l = 0;
 	ints.p = 0;
 	tab = (int *)malloc(sum * sizeof(int));
-	ft_malloc(tab);
+	ft_malloc(tab, NULL, NULL, NULL);
 	while (av[ints.i])
 	{
 		ints.j = 0;
 		num = ft_split(av[ints.i], 32);
-		ft_malloc(num);
+		ft_malloc(NULL, tab, NULL, num);
 		ft_cont1(num, &ints, tab);
 		ft_free_all(num);
 		(ints.i)++;

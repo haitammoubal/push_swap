@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/15 08:32:06 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/04/15 11:10:47 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/15 18:22:14 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_error_bonus(char **num);
 void	ft_cont1_bonus(char **num, t_int *ints, int *tab);
 int		ft_check_sorted_bonus(t_table *m);
 void	ft_free_stack_bonus(t_table *m);
-void	ft_malloc_bonus(void *tab);
+void	ft_malloc_bonus(void *tab, int *hub, int *t, char **str);
 void	ft_check(t_table *m);
 void	ft_ifs(t_table *m, t_int var, char *tab);
 void	ft_unknown_move(t_table *m);
