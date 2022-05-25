@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/05/15 18:23:37 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:06:48 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	ft_checknumbers_bonus(char **av)
 		var.k = 0;
 		num = ft_split(av[var.i], 32);
 		ft_over_bonus(num);
-		ft_malloc_bonus(NULL, NULL, NULL, num);
+		ft_malloc_num_bonus(num);
 		if (num[var.k] == NULL)
 			ft_error_bonus(num);
 		ft_cont_bonus(num, var.k, var.j, &sum);

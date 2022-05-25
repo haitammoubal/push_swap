@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 23:50:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/05/15 18:20:35 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:11:46 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,31 @@ void	ft_malloc(void *tab, int *hub, int *t, char **str)
 	}
 }
 
+void	ft_malloc_num(char **str)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+	{
+		ft_putstr_fd("malloc error\n", 2);
+		exit(1);
+	}
+}
+
+void	ft_malloc_num2(char **str, int *tab)
+{
+	int	i;
+
+	i = 0;
+	if (str == NULL)
+	{
+		ft_putstr_fd("malloc error\n", 2);
+		free(tab);
+		exit(1);
+	}
+}
+
 int	main(int ac, char **av)
 {
 	t_table	m;
@@ -45,5 +70,6 @@ int	main(int ac, char **av)
 	ft_malloc(m.b.tab, m.a.tab, NULL, NULL);
 	m.b.used = 0;
 	ft_sorting(&m, m.a.size);
+	ft_free_stack(&m);
 	return (0);
 }

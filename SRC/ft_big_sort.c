@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 16:23:09 by hmoubal           #+#    #+#             */
-/*   Updated: 2022/05/15 18:21:49 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/25 17:12:06 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,4 @@ void	ft_big_sort(t_table *m, int div)
 	}
 	while (m->a.used != m->a.size)
 		ft_send(m);
-	ft_free_stack(m);
 }

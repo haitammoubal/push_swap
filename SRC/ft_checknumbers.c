@@ -6,7 +6,7 @@
 /*   By: hmoubal <hmoubal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 23:18:43 by haitam            #+#    #+#             */
-/*   Updated: 2022/05/15 18:21:20 by hmoubal          ###   ########.fr       */
+/*   Updated: 2022/05/25 16:59:04 by hmoubal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	ft_checknumbers(char **av)
 	{
 		var.k = 0;
 		num = ft_split(av[var.i], 32);
-		ft_malloc(NULL, NULL, NULL, num);
+		ft_malloc_num(num);
 		ft_over(num);
 		if (num[var.k] == NULL)
 			ft_error(num);
